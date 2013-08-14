@@ -55,6 +55,8 @@
 	
 	<option value="//api/name/setApiKey:forAppId:">&nbsp;&nbsp;&nbsp;&nbsp;+ setApiKey:forAppId:</option>
 	
+	<option value="//api/name/showNewMessageComposer">&nbsp;&nbsp;&nbsp;&nbsp;+ showNewMessageComposer</option>
+	
 	<option value="//api/name/updateAttributes:">&nbsp;&nbsp;&nbsp;&nbsp;+ updateAttributes:</option>
 	
 	<option value="//api/name/updateUserName:">&nbsp;&nbsp;&nbsp;&nbsp;+ updateUserName:</option>
@@ -85,6 +87,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Updating a user&apos;s name.">Updating a user&apos;s name.</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Sending a new message to Intercom.">Sending a new message to Intercom.</a></span></li>
+	
 </ul></li>
 
 
@@ -106,6 +110,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/incrementAttribute:">incrementAttribute:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setApiKey:forAppId:">setApiKey:forAppId:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/showNewMessageComposer">showNewMessageComposer</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateAttributes:">updateAttributes:</a></span></li>
 	
@@ -187,7 +193,7 @@ settings page.</p></span>
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/beginSessionForUserWithEmail:">+&nbsp;beginSessionForUserWithEmail:</a></code>
-		<span class="tooltip"><p>Begins a session for the specified user.  Either an email address or a unique identifier must be used.
+		<span class="tooltip"><p>Begins a session for the specified user.  Either an email address orICM a unique identifier must be used.
 This should be the same as the one used for your web application.</p></span>
 	</span>
 	
@@ -256,6 +262,21 @@ also be decremented by using a negative operator.</p></span>
 </li>
 						</ul>
 						
+						
+						<a title="Sending a new message to Intercom." name="task_Sending a new message to Intercom."></a>
+						<h3 class="subsubtitle task-title">Sending a new message to Intercom.</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/showNewMessageComposer">+&nbsp;showNewMessageComposer</a></code>
+		<span class="tooltip"><p>Enabling users send messages to Intercom from inside your app is easy. Simply include;</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
 					</div>
 					
 					
@@ -275,7 +296,7 @@ also be decremented by using a negative operator.</p></span>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Begins a session for the specified user.  Either an email address or a unique identifier must be used.
+		<p>Begins a session for the specified user.  Either an email address orICM a unique identifier must be used.
 This should be the same as the one used for your web application.</p>
 	</div>		
 	
@@ -596,6 +617,51 @@ settings page.</p>
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/showNewMessageComposer" title="showNewMessageComposer"></a>
+	<h3 class="subsubtitle method-title">showNewMessageComposer</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Enabling users send messages to Intercom from inside your app is easy. Simply include;</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)showNewMessageComposer</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<pre><code>[Intercom showMessageComposer];
+</code></pre>
+
+<p>In a button&rsquo;s action method or upon selection of a tableViewCell or other element and the message composer will appear as a modal
+view controller on iPhone and a modal with formSheet style on iPad.</p><div class="note"><p><strong>Note:</strong> The Intercom SDK requires that you have a rootViewController at the end of application launch in order to use messaging features.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Intercom.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/updateAttributes:" title="updateAttributes:"></a>
 	<h3 class="subsubtitle method-title">updateAttributes:</h3>
 	
@@ -714,7 +780,7 @@ the timestamp <code>12345678</code>.</p><div class="warning"><p><strong>Warning:
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 Intercom. All rights reserved. (Last updated: 2013-02-07)</span><br />
+						<p><span class="copyright">&copy; 2013 Intercom. All rights reserved. (Last updated: 2013-08-14)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						
