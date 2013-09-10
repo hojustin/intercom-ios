@@ -53,6 +53,8 @@
 	
 	<option value="//api/name/incrementAttribute:">&nbsp;&nbsp;&nbsp;&nbsp;+ incrementAttribute:</option>
 	
+	<option value="//api/name/requiresDisplayOffset:">&nbsp;&nbsp;&nbsp;&nbsp;+ requiresDisplayOffset:</option>
+	
 	<option value="//api/name/setApiKey:forAppId:">&nbsp;&nbsp;&nbsp;&nbsp;+ setApiKey:forAppId:</option>
 	
 	<option value="//api/name/showNewMessageComposer">&nbsp;&nbsp;&nbsp;&nbsp;+ showNewMessageComposer</option>
@@ -89,6 +91,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Sending a new message to Intercom.">Sending a new message to Intercom.</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Troubleshooting a statusbar offset.">Troubleshooting a statusbar offset.</a></span></li>
+	
 </ul></li>
 
 
@@ -108,6 +112,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/endSession">endSession</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/incrementAttribute:">incrementAttribute:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requiresDisplayOffset:">requiresDisplayOffset:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setApiKey:forAppId:">setApiKey:forAppId:</a></span></li>
 	
@@ -271,6 +277,22 @@ also be decremented by using a negative operator.</p></span>
 	<span class="tooltip">
 		<code><a href="#//api/name/showNewMessageComposer">+&nbsp;showNewMessageComposer</a></code>
 		<span class="tooltip"><p>Enabling users send messages to Intercom from inside your app is easy. Simply include;</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Troubleshooting a statusbar offset." name="task_Troubleshooting a statusbar offset."></a>
+						<h3 class="subsubtitle task-title">Troubleshooting a statusbar offset.</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/requiresDisplayOffset:">+&nbsp;requiresDisplayOffset:</a></code>
+		<span class="tooltip"><p>Depending on the composition of your rootViewController, sometimes in messages appear to be offset by 20 pixels, the height of the status bar.
+This is due to Apple&rsquo;s expectation of navigation controllers being used as top level contructs and not beind children of UIViewControllers.</p></span>
 	</span>
 	
 	
@@ -550,6 +572,55 @@ anywhere else as Intercom listens for changes in UIApplication state and calcula
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/requiresDisplayOffset:" title="requiresDisplayOffset:"></a>
+	<h3 class="subsubtitle method-title">requiresDisplayOffset:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Depending on the composition of your rootViewController, sometimes in messages appear to be offset by 20 pixels, the height of the status bar.
+This is due to Apple&rsquo;s expectation of navigation controllers being used as top level contructs and not beind children of UIViewControllers.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)requiresDisplayOffset:(BOOL)<em>offset</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If messages being displayed in your apps appear 20 pixels out of place, call</p>
+
+<pre><code>[Intercom requiresDisplayOffset:YES];
+</code></pre>
+
+<p>and the SDK will force messages to draw 20 pixels higher.</p>
+
+<p>By default, this is set to NO.</p><div class="note"><p><strong>Note:</strong> This bug has only been observed in iOS 6. In iOS 7 the display offset is ignored.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Intercom.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/setApiKey:forAppId:" title="setApiKey:forAppId:"></a>
 	<h3 class="subsubtitle method-title">setApiKey:forAppId:</h3>
 	
@@ -640,7 +711,7 @@ settings page.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<pre><code>[Intercom showNewMessageComposer];
+		<pre><code>[Intercom showMessageComposer];
 </code></pre>
 
 <p>In a button&rsquo;s action method or upon selection of a tableViewCell or other element and the message composer will appear as a modal
@@ -780,7 +851,7 @@ the timestamp <code>12345678</code>.</p><div class="warning"><p><strong>Warning:
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 Intercom. All rights reserved. (Last updated: 2013-08-14)</span><br />
+						<p><span class="copyright">&copy; 2013 Intercom. All rights reserved. (Last updated: 2013-09-10)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						
