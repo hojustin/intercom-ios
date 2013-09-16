@@ -53,6 +53,8 @@
 	
 	<option value="//api/name/incrementAttribute:">&nbsp;&nbsp;&nbsp;&nbsp;+ incrementAttribute:</option>
 	
+	<option value="//api/name/loggingEnabled:">&nbsp;&nbsp;&nbsp;&nbsp;+ loggingEnabled:</option>
+	
 	<option value="//api/name/requiresDisplayOffset:">&nbsp;&nbsp;&nbsp;&nbsp;+ requiresDisplayOffset:</option>
 	
 	<option value="//api/name/setApiKey:forAppId:">&nbsp;&nbsp;&nbsp;&nbsp;+ setApiKey:forAppId:</option>
@@ -91,6 +93,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Sending a new message to Intercom.">Sending a new message to Intercom.</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Logging.">Logging.</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Troubleshooting a statusbar offset.">Troubleshooting a statusbar offset.</a></span></li>
 	
 </ul></li>
@@ -112,6 +116,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/endSession">endSession</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/incrementAttribute:">incrementAttribute:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/loggingEnabled:">loggingEnabled:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requiresDisplayOffset:">requiresDisplayOffset:</a></span></li>
 	
@@ -277,6 +283,21 @@ also be decremented by using a negative operator.</p></span>
 	<span class="tooltip">
 		<code><a href="#//api/name/showNewMessageComposer">+&nbsp;showNewMessageComposer</a></code>
 		<span class="tooltip"><p>Enabling users send messages to Intercom from inside your app is easy. Simply include;</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Logging." name="task_Logging."></a>
+						<h3 class="subsubtitle task-title">Logging.</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/loggingEnabled:">+&nbsp;loggingEnabled:</a></code>
+		<span class="tooltip"><p>The Intercom iOS SDK has a logging mode that you can use to see if sessions are being created and messages are being delivered.</p></span>
 	</span>
 	
 	
@@ -572,6 +593,62 @@ anywhere else as Intercom listens for changes in UIApplication state and calcula
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/loggingEnabled:" title="loggingEnabled:"></a>
+	<h3 class="subsubtitle method-title">loggingEnabled:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The Intercom iOS SDK has a logging mode that you can use to see if sessions are being created and messages are being delivered.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)loggingEnabled:(BOOL)<em>logging</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>logging</em></dt>
+			<dd><p>A boolean value for enabling or disabling logging throughout the SDK.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Enable logging by simply calling</p>
+
+<pre><code>    [Intercom loggingEnabled:YES];
+</code></pre>
+
+<p>in your application delegate under where the api-key and app-id are set. Disable this for release builds should you wish to mute the SDK&rsquo;s output.</p><div class="note"><p><strong>Note:</strong> Logging is turned off by default. To see logs, please enable it in your application&rsquo;s delegate.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Intercom.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/requiresDisplayOffset:" title="requiresDisplayOffset:"></a>
 	<h3 class="subsubtitle method-title">requiresDisplayOffset:</h3>
 	
@@ -587,6 +664,16 @@ This is due to Apple&rsquo;s expectation of navigation controllers being used as
 	<div class="method-subsection method-declaration"><code>+ (void)requiresDisplayOffset:(BOOL)<em>offset</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>offset</em></dt>
+			<dd><p>A boolean value determining if the offset should be applied. NO by default.</p></dd>
+		</dl>
+		
+	</div>
 	
 	
 	
@@ -851,7 +938,7 @@ the timestamp <code>12345678</code>.</p><div class="warning"><p><strong>Warning:
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 Intercom. All rights reserved. (Last updated: 2013-09-10)</span><br />
+						<p><span class="copyright">&copy; 2013 Intercom. All rights reserved. (Last updated: 2013-09-16)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						
