@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		<meta name="generator" content="appledoc 2.1 (build 858)" />
+		<meta name="generator" content="appledoc 2.2 (build 961)" />
 	</head>
 	<body>
 		<header id="top_header">
@@ -49,6 +49,8 @@
 	
 	<option value="//api/name/beginSessionForUserWithUserId:andEmail:">&nbsp;&nbsp;&nbsp;&nbsp;+ beginSessionForUserWithUserId:andEmail:</option>
 	
+	<option value="//api/name/closeNewMessageComposer">&nbsp;&nbsp;&nbsp;&nbsp;+ closeNewMessageComposer</option>
+	
 	<option value="//api/name/endSession">&nbsp;&nbsp;&nbsp;&nbsp;+ endSession</option>
 	
 	<option value="//api/name/incrementAttribute:">&nbsp;&nbsp;&nbsp;&nbsp;+ incrementAttribute:</option>
@@ -59,7 +61,7 @@
 	
 	<option value="//api/name/setApiKey:forAppId:">&nbsp;&nbsp;&nbsp;&nbsp;+ setApiKey:forAppId:</option>
 	
-	<option value="//api/name/showNewMessageComposer">&nbsp;&nbsp;&nbsp;&nbsp;+ showNewMessageComposer</option>
+	<option value="//api/name/showNewMessageComposerWithTitleColor:barColor:keyboardAppearance:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ showNewMessageComposerWithTitleColor:barColor:keyboardAppearance:success:failure:</option>
 	
 	<option value="//api/name/updateAttributes:">&nbsp;&nbsp;&nbsp;&nbsp;+ updateAttributes:</option>
 	
@@ -113,6 +115,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/beginSessionForUserWithUserId:andEmail:">beginSessionForUserWithUserId:andEmail:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/closeNewMessageComposer">closeNewMessageComposer</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/endSession">endSession</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/incrementAttribute:">incrementAttribute:</a></span></li>
@@ -123,7 +127,7 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setApiKey:forAppId:">setApiKey:forAppId:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/showNewMessageComposer">showNewMessageComposer</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/showNewMessageComposerWithTitleColor:barColor:keyboardAppearance:success:failure:">showNewMessageComposerWithTitleColor:barColor:keyboardAppearance:success:failure:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateAttributes:">updateAttributes:</a></span></li>
 	
@@ -281,8 +285,16 @@ also be decremented by using a negative operator.</p></span>
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/showNewMessageComposer">+&nbsp;showNewMessageComposer</a></code>
+		<code><a href="#//api/name/showNewMessageComposerWithTitleColor:barColor:keyboardAppearance:success:failure:">+&nbsp;showNewMessageComposerWithTitleColor:barColor:keyboardAppearance:success:failure:</a></code>
 		<span class="tooltip"><p>Enabling users send messages to Intercom from inside your app is easy. Simply include;</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/closeNewMessageComposer">+&nbsp;closeNewMessageComposer</a></code>
+		<span class="tooltip"><p>  Manually close the new message composer.  Used in conjunction with the message composer, the close method allows for the composer to be
+  closed after a custom HUD or other message might be displayed.</p></span>
 	</span>
 	
 	
@@ -363,6 +375,11 @@ This should be the same as the one used for your web application.</p>
 	
 	
 	
+	<div class="method-subsection availability">
+		<h4 class="method-subtitle parameter-title">Availability</h4>
+		<p>Available since version 1.0</p>
+	</div>
+	
 	
 	
 	<div class="method-subsection discussion-section">
@@ -414,6 +431,11 @@ changes so <a href="#//api/name/endSession">endSession</a> doesn&rsquo;t need to
 	
 	
 	
+	
+	<div class="method-subsection availability">
+		<h4 class="method-subtitle parameter-title">Availability</h4>
+		<p>Available since version 1.0</p>
+	</div>
 	
 	
 	
@@ -473,12 +495,64 @@ method if both pieces of information are present.</p>
 	
 	
 	
+	<div class="method-subsection availability">
+		<h4 class="method-subtitle parameter-title">Availability</h4>
+		<p>Available since version 1.0</p>
+	</div>
+	
 	
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<div class="note"><p><strong>Note:</strong> Sessions only need to begin on authentication success.  Intercom listens for <code>UIApplication</code> state
 changes so <a href="#//api/name/endSession">endSession</a> doesn&rsquo;t need to be implemented in any additional locations other than a logout method.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">Intercom.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/closeNewMessageComposer" title="closeNewMessageComposer"></a>
+	<h3 class="subsubtitle method-title">closeNewMessageComposer</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>  Manually close the new message composer.  Used in conjunction with the message composer, the close method allows for the composer to be
+  closed after a custom HUD or other message might be displayed.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)closeNewMessageComposer</code></div>
+
+    
+	
+	
+	
+	
+	
+	<div class="method-subsection availability">
+		<h4 class="method-subtitle parameter-title">Availability</h4>
+		<p>Version 1.1.5</p>
+	</div>
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="note"><p><strong>Note:</strong> In a future release we plan to provide a better UI for successful message reporting so that explicit composer closing won&rsquo;t be required.</p></div>
 	</div>
 	
 	
@@ -515,6 +589,11 @@ are managed for you so there is no need to implement this in your application&rs
 	
 	
 	
+	
+	<div class="method-subsection availability">
+		<h4 class="method-subtitle parameter-title">Availability</h4>
+		<p>Available since version 1.0</p>
+	</div>
 	
 	
 	
@@ -567,6 +646,11 @@ anywhere else as Intercom listens for changes in UIApplication state and calcula
 	
 	
 	
+	
+	<div class="method-subsection availability">
+		<h4 class="method-subtitle parameter-title">Availability</h4>
+		<p>Available since version 1.0</p>
+	</div>
 	
 	
 	
@@ -621,6 +705,11 @@ anywhere else as Intercom listens for changes in UIApplication state and calcula
 	
 	
 	
+	
+	<div class="method-subsection availability">
+		<h4 class="method-subtitle parameter-title">Availability</h4>
+		<p>Available since version 1.1.4</p>
+	</div>
 	
 	
 	
@@ -678,6 +767,11 @@ This is due to Apple&rsquo;s expectation of navigation controllers being used as
 	
 	
 	
+	
+	<div class="method-subsection availability">
+		<h4 class="method-subtitle parameter-title">Availability</h4>
+		<p>Available since version 1.1.4</p>
+	</div>
 	
 	
 	
@@ -744,6 +838,11 @@ settings page.</p>
 	
 	
 	
+	<div class="method-subsection availability">
+		<h4 class="method-subtitle parameter-title">Availability</h4>
+		<p>Available since version 1.0</p>
+	</div>
+	
 	
 	
 	<div class="method-subsection discussion-section">
@@ -775,8 +874,8 @@ settings page.</p>
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/showNewMessageComposer" title="showNewMessageComposer"></a>
-	<h3 class="subsubtitle method-title">showNewMessageComposer</h3>
+	<a name="//api/name/showNewMessageComposerWithTitleColor:barColor:keyboardAppearance:success:failure:" title="showNewMessageComposerWithTitleColor:barColor:keyboardAppearance:success:failure:"></a>
+	<h3 class="subsubtitle method-title">showNewMessageComposerWithTitleColor:barColor:keyboardAppearance:success:failure:</h3>
 	
 	
 	
@@ -786,22 +885,62 @@ settings page.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (void)showNewMessageComposer</code></div>
+	<div class="method-subsection method-declaration"><code>+ (void)showNewMessageComposerWithTitleColor:(UIColor *)<em>titleColor</em> barColor:(UIColor *)<em>barColor</em> keyboardAppearance:(UIKeyboardAppearance)<em>keyboardAppearance</em> success:(void ( ^ ) ( id responseObject ))<em>success</em> failure:(void ( ^ ) ( NSError *error ))<em>failure</em></code></div>
 
     
 	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>titleColor</em></dt>
+			<dd><p>The color text applied to the navigation bar&rsquo;s title. If nil the default color will apply.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>barColor</em></dt>
+			<dd><p>The color color applied to the navigation bar&rsquo;s background. If nil, the Intercom baseColor set through Intercom will be used.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>keyboardAppearance</em></dt>
+			<dd><p>A UIKeyboardAppearance style for the presented keyboard.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>The callback on successful sending of the message. Typically returns a status message in its response.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>The callback for an unsuccessful attempt at sending a new message with the appropriate error.</p></dd>
+		</dl>
+		
+	</div>
 	
 	
 	
+	
+	
+	<div class="method-subsection availability">
+		<h4 class="method-subtitle parameter-title">Availability</h4>
+		<p>Available since version 1.1.5</p>
+	</div>
 	
 	
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<pre><code>[Intercom showMessageComposer];
+		<pre><code> [Intercom showNewMessageComposerWithTitleColor:[UIColor greenColor] barColor:[UIColor purpleColor] success:^(id responseObject) {
+     // Successfully sent the message
+     [Intercom closeNewMessageComposer];
+ } failure:^(NSError *error) {
+     NSLog(@"Failure is %@", error.localizedDescription);
+ }];
 </code></pre>
 
-<p>In a button&rsquo;s action method or upon selection of a tableViewCell or other element and the message composer will appear as a modal
+<p>in a button&rsquo;s action method or upon selection of a tableViewCell or other element and the message composer will appear as a modal
 view controller on iPhone and a modal with formSheet style on iPad.</p><div class="note"><p><strong>Note:</strong> The Intercom SDK requires that you have a rootViewController at the end of application launch in order to use messaging features.</p></div>
 	</div>
 	
@@ -849,6 +988,11 @@ also be decremented by using a negative operator.</p>
 	
 	
 	
+	
+	<div class="method-subsection availability">
+		<h4 class="method-subtitle parameter-title">Availability</h4>
+		<p>Available since version 1.0</p>
+	</div>
 	
 	
 	
@@ -907,6 +1051,11 @@ the timestamp <code>12345678</code>.</p><div class="warning"><p><strong>Warning:
 	
 	
 	
+	<div class="method-subsection availability">
+		<h4 class="method-subtitle parameter-title">Availability</h4>
+		<p>Available since version 1.0</p>
+	</div>
+	
 	
 	
 	
@@ -938,9 +1087,9 @@ the timestamp <code>12345678</code>.</p><div class="warning"><p><strong>Warning:
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 Intercom. All rights reserved. (Last updated: 2013-09-16)</span><br />
+						<p><span class="copyright">&copy; 2013 Intercom. All rights reserved. (Last updated: 2013-11-13)</span><br />
 						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 961)</a>.</span></p>
 						
 					</div>
 				</div>
